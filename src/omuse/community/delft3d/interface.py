@@ -387,7 +387,7 @@ class DFlowFM(InCodeComponentImplementation, CodeWithIniFileParameters):
             self.ini_output.SnapshotDir='snapshots_' + n
             #~ self.ini_restart.RestartFile=basename + '_' + n + '_rst.nc'
 
-            self.write_inifile_parameters(filename)
+            self.write_inifile_parameters(os.path.join(self._workdir, filename))
         
         self.ini_geometry.NetFile=orig_netfile
         self.ini_output.SnapshotDir=orig_snapshotdir
